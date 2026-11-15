@@ -1,0 +1,46 @@
+name: Test on MiniOJ
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  moj:
+    name: MiniOJ
+    if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '@minioj-bot') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate bot token
+        id: generate-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.MINIOJ_CLIENT_ID }}
+          private-key: ${{ secrets.MINIOJ_PRIVATE_KEY }}
+      - name: Check out repository code
+        uses: actions/checkout@v7
+      - name: Check out PR code
+        run: "gh pr checkout $PR_ID"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          PR_ID: ${{ github.event.issue.id }}
+      - name: Setup MiniOJ config
+        uses: actions/checkout@v7
+        with:
+          repo: "FFFabulousRobotics/MiniOJ-config"
+          path: ".minioj/"
+          token: ${{ steps.generate-token.outputs.token }}
+      - name: Setup default remote
+        run: "gh repo set-default origin"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+      - name: Setup Python 3.14
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: Install MiniOJ
+        run: "pip install minioj"
+      - name: Run MiniOJ
+        run: 'minioj -x "$COMMENT" -t "$GH_TOKEN" -i "$PR_ID"'
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          PR_ID: ${{ github.event.issue.id }}
