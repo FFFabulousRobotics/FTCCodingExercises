@@ -1,0 +1,66 @@
+apply plugin: 'java'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Each exercise has its own default-package Main. Compile them separately.
+def exerciseJars = []
+def exerciseSets = exerciseNames.collect { exerciseName ->
+    def exerciseSourceSet = sourceSets.create(exerciseName) {
+        java {
+            setSrcDirs([exerciseName])
+            include 'Main.java'
+        }
+        resources.setSrcDirs([])
+    }
+    def exerciseJar = tasks.register("${exerciseName}Jar", Jar) {
+        group = 'build'
+        description = "Build an executable JAR for ${project.name}/${exerciseName}."
+        archiveFileName = "${exerciseName}.jar"
+        from exerciseSourceSet.output
+        manifest {
+            attributes 'Main-Class': 'Main'
+        }
+    }
+    exerciseJars.add(exerciseJar)
+    tasks.register("run${exerciseName.capitalize()}", JavaExec) {
+        group = 'application'
+        description = "Run ${project.name}/${exerciseName} with standard input."
+        dependsOn exerciseJar
+        classpath = files(exerciseJar.flatMap { it.archiveFile })
+        mainClass = 'Main'
+        javaLauncher = javaToolchains.launcherFor {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+        standardInput = System.in
+        maxHeapSize = '64m'
+        systemProperty 'file.encoding', 'UTF-8'
+    }
+    exerciseSourceSet
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+    options.compilerArgs.add('-proc:none')
+}
+
+tasks.named('classes') {
+    dependsOn exerciseSets.collect { it.classesTaskName }
+}
+
+tasks.named('check') {
+    dependsOn exerciseSets.collect { it.classesTaskName }
+}
+
+// The week has several independent programs, so assemble their JARs separately.
+tasks.named('jar') {
+    enabled = false
+}
+
+tasks.named('assemble') {
+    dependsOn exerciseJars
+}

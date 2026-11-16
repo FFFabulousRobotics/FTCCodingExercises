@@ -1,0 +1,2 @@
+ext.exerciseNames = ['ex1']
+apply from: rootProject.file('gradle/exercises.gradle')

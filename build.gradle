@@ -1,0 +1,11 @@
+plugins {
+    id 'base'
+}
+
+tasks.named('assemble') {
+    dependsOn subprojects.collect { "${it.path}:assemble" }
+}
+
+tasks.named('check') {
+    dependsOn subprojects.collect { "${it.path}:check" }
+}

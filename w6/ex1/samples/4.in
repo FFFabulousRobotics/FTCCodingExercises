@@ -1,0 +1,13 @@
+commands
+11
+local 0 本地 0 A 165 120
+foreign 1 来客 1 C 155 95 纳塔
+get 0
+charm 0 101
+get 0
+charm 0 100
+prefix 0 嘉宾
+match 1 0
+height 0 160
+match 1 0
+show 1

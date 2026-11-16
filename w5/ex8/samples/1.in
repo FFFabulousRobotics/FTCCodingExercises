@@ -1,0 +1,13 @@
+12
+default 0
+new 1 5
+start 0
+chant 0 2
+show 0
+start 1
+chant 1 3
+show 1
+chant 0 1
+show 0
+new 2 2
+show 2

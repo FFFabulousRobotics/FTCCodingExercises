@@ -1,0 +1,8 @@
+.build/
+*.class
+__pycache__/
+.minioj/
+.gradle/
+**/build/
+judge-work/
+judge-output/

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="Main.java" kind="src" output="bin/ex1" path="ex1">
+		<attributes>
+			<attribute name="gradle_scope" value="ex1"/>
+			<attribute name="gradle_used_by_scope" value="ex1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="Main.java" kind="src" output="bin/ex2" path="ex2">
+		<attributes>
+			<attribute name="gradle_scope" value="ex2"/>
+			<attribute name="gradle_used_by_scope" value="ex2"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="Main.java" kind="src" output="bin/ex3" path="ex3">
+		<attributes>
+			<attribute name="gradle_scope" value="ex3"/>
+			<attribute name="gradle_used_by_scope" value="ex3"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="Main.java" kind="src" output="bin/ex4" path="ex4">
+		<attributes>
+			<attribute name="gradle_scope" value="ex4"/>
+			<attribute name="gradle_used_by_scope" value="ex4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="Main.java" kind="src" output="bin/ex5" path="ex5">
+		<attributes>
+			<attribute name="gradle_scope" value="ex5"/>
+			<attribute name="gradle_used_by_scope" value="ex5"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="Main.java" kind="src" output="bin/ex6" path="ex6">
+		<attributes>
+			<attribute name="gradle_scope" value="ex6"/>
+			<attribute name="gradle_used_by_scope" value="ex6"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="Main.java" kind="src" output="bin/ex7" path="ex7">
+		<attributes>
+			<attribute name="gradle_scope" value="ex7"/>
+			<attribute name="gradle_used_by_scope" value="ex7"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="Main.java" kind="src" output="bin/ex8" path="ex8">
+		<attributes>
+			<attribute name="gradle_scope" value="ex8"/>
+			<attribute name="gradle_used_by_scope" value="ex8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21/"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="output" path="bin/default"/>
+</classpath>

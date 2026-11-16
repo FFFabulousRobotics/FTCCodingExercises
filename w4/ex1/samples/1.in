@@ -1,0 +1,16 @@
+15
+new 0 10
+new 1 8
+heal 0
+hurt 0 12
+heal 0
+show 0
+heal 1
+show 1
+hurt 1 4
+heal 1
+show 1
+hurt 1 2
+heal 1
+show 1
+show 0
