@@ -73,7 +73,7 @@ W4/W5 的原题通过固定 Main 调用方法。这里提供读取命令的 Main
 
 本仓库的 `.github/workflows/pull-requests.yml` 只保留评论触发条件、权限、并发控制和可复用工作流调用。实际的 checkout、工作区准备、容器评测、artifact 保存和评论发布集中在 `MiniOJ-images/.github/workflows/judge.yml`，其中评测和发布评论仍使用两个独立 job。调用时只传入现有的两个 App secret。
 
-PR 评论工作流拉取 `MiniOJ-images` 仓库发布的 `ghcr.io/fffabulousrobotics/minioj-java21:1.0.0`。镜像提供 JDK 21、Gradle 9.1.0 和从 PyPI 安装的 MiniOJ 0.2.0，每次评测无需重新构建镜像或安装工具。题目配置仍来自独立的 `MiniOJ-config` 仓库。
+PR 评论工作流拉取 `MiniOJ-images` 仓库发布的 `ghcr.io/fffabulousrobotics/minioj-java21:1.0.0`。镜像提供 JDK 21、Gradle 9.1.0 和从 PyPI 安装的 MiniOJ 0.3.0，每次评测无需重新构建镜像或安装工具。题目配置仍来自独立的 `MiniOJ-config` 仓库。
 
 工作流先在 runner 上将默认分支项目与 PR 的 `Main.java` 组合到 `judge-work/`，再将它以可写方式挂载到容器的 `/workspace`。容器以 runner 的 UID/GID 运行，Gradle 的 build 产物和缓存可直接写入，不需要 sudo。Gradle 用户缓存使用临时目录；配置中的构建命令调用镜像自带的 `gradle --offline`，不重建 wrapper 缓存。
 
