@@ -38,6 +38,11 @@ jobs:
           python-version: "3.14"
       - name: Install MiniOJ
         run: "pip install minioj"
+      - name: Set up Zulu JDK 21
+        uses: actions/setup-java@v6
+        with:
+          distribution: "zulu"
+          java-version: "21"
       - name: Run MiniOJ
         run: 'minioj -x "$COMMENT" -t "$GH_TOKEN" -i "$PR_ID"'
         env:
