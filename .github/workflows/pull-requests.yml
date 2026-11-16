@@ -18,7 +18,7 @@ jobs:
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '@minioj-bot') &&
       github.event.repository.fork == false
-    uses: FFFabulousRobotics/MiniOJ-images/.github/workflows/judge.yml@v1.0.1
+    uses: FFFabulousRobotics/MiniOJ-images/.github/workflows/judge.yml@master
     secrets:
       MINIOJ_CLIENT_ID: ${{ secrets.MINIOJ_CLIENT_ID }}
       MINIOJ_PRIVATE_KEY: ${{ secrets.MINIOJ_PRIVATE_KEY }}
