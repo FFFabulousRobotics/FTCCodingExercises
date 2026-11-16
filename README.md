@@ -33,13 +33,13 @@ FFFabulous Robotics 的 Java 基础练习。使用 JDK 21，所有题目均为�
 
 本地默认使用腾讯云 Gradle 镜像下载发行包。GitHub 工作流会将默认的 `gradle-wrapper.properties` 重命名为 `gradle-wrapper.local.properties`，再将 `gradle-wrapper.github.properties` 重命名为 `gradle-wrapper.properties`，切换到 Gradle 官方下载源。两份配置都位于 `gradle/wrapper/`。
 
-| 命令 | 作用 |
-| --- | --- |
-| `./gradlew projects` | 查看所有周模块 |
-| `./gradlew build` | 编译全部题目的模板或实现 |
-| `./gradlew :w5:build` | 编译 W5 的八道题 |
-| `./gradlew :w5:ex2Classes` | 只编译 w5/ex2 |
-| `./gradlew :w5:ex2Jar` | 构建 `w5/build/libs/ex2.jar` |
+| 命令                                           | 作用                          |
+| ---------------------------------------------- | ----------------------------- |
+| `./gradlew projects`                           | 查看所有周模块                |
+| `./gradlew build`                              | 编译全部题目的模板或实现      |
+| `./gradlew :w5:build`                          | 编译 W5 的八道题              |
+| `./gradlew :w5:ex2Classes`                     | 只编译 w5/ex2                 |
+| `./gradlew :w5:ex2Jar`                         | 构建 `w5/build/libs/ex2.jar`  |
 | `./gradlew --quiet --console=plain :w5:runEx2` | 运行 w5/ex2，从标准输入读命令 |
 
 `build` 编译代码并生成各题的 JAR，不判定答案是否正确。运行时可用 `< w5/ex2/samples/1.in` 提供样例输入，输出与对应 `.out` 文件比较。也可以在构建后运行 `java -jar w5/build/libs/ex2.jar < w5/ex2/samples/1.in`。OJ 使用 Gradle 构建所选题目的 JAR，再逐个输入测试该 JAR；提交无需包含生成的 build 目录。
@@ -48,20 +48,20 @@ FFFabulous Robotics 的 Java 基础练习。使用 JDK 21，所有题目均为�
 
 编号按每周编程题连续排列；来源中的小节编号保留在题面中。
 
-| OJ 题号 | 原课程 | 题目 |
-| --- | --- | --- |
-| w1/ex1 | W1.2 / FP102 | [向 19726 报到](w1/ex1/README.md) |
-| w2/ex1 | W2.4 | [FTC 年度交友大会](w2/ex1/README.md) |
-| w4/ex1 | W4 | [别让 host 变成白开水](w4/ex1/README.md) |
-| w5/ex1 | W5 / bottle | [盐汽水的开盖尖叫](w5/ex1/README.md) |
-| w5/ex2 | W5 / photo | [盐汽水和Gay哥的合影机](w5/ex2/README.md) |
-| w5/ex3 | W5 / light | [盐汽水的三拍应援灯](w5/ex3/README.md) |
-| w5/ex4 | W5 / counter | [盐汽水的彩虹打call机](w5/ex4/README.md) |
-| w5/ex5 | W5 / echo | [Gay哥和盐汽水的回声彩排](w5/ex5/README.md) |
-| w5/ex6 | W5 / sound | [盐汽水的串台音响](w5/ex6/README.md) |
-| w5/ex7 | W5 / planner | [盐汽水和Gay哥的拼车箱](w5/ex7/README.md) |
-| w5/ex8 | W5 / station | [盐汽水和Gay哥的双人应援站](w5/ex8/README.md) |
-| w6/ex1 | W6.1 | [FTC 年度交友大会 2.0](w6/ex1/README.md) |
+| OJ 题号 | 原课程       | 题目                                          |
+| ------- | ------------ | --------------------------------------------- |
+| w1/ex1  | W1.2 / FP102 | [向 19726 报到](w1/ex1/README.md)             |
+| w2/ex1  | W2.4         | [FTC 年度交友大会](w2/ex1/README.md)          |
+| w4/ex1  | W4           | [别让 host 变成白开水](w4/ex1/README.md)      |
+| w5/ex1  | W5 / bottle  | [盐汽水的开盖尖叫](w5/ex1/README.md)          |
+| w5/ex2  | W5 / photo   | [盐汽水和Gay哥的合影机](w5/ex2/README.md)     |
+| w5/ex3  | W5 / light   | [盐汽水的三拍应援灯](w5/ex3/README.md)        |
+| w5/ex4  | W5 / counter | [盐汽水的彩虹打call机](w5/ex4/README.md)      |
+| w5/ex5  | W5 / echo    | [Gay哥和盐汽水的回声彩排](w5/ex5/README.md)   |
+| w5/ex6  | W5 / sound   | [盐汽水的串台音响](w5/ex6/README.md)          |
+| w5/ex7  | W5 / planner | [盐汽水和Gay哥的拼车箱](w5/ex7/README.md)     |
+| w5/ex8  | W5 / station | [盐汽水和Gay哥的双人应援站](w5/ex8/README.md) |
+| w6/ex1  | W6.1         | [FTC 年度交友大会 2.0](w6/ex1/README.md)      |
 
 W4/W5 的原题通过固定 Main 调用方法。这里提供读取命令的 Main，便于 OJ 用不同输入调用对象；题面列出了命令格式，保留驱动即可。W6 保留大会的原始输入格式，并提供 `commands` 方法测试模式，另见 [方法模式样例](w6/ex1/samples/4.in)。
 
@@ -73,7 +73,7 @@ W4/W5 的原题通过固定 Main 调用方法。这里提供读取命令的 Main
 
 本仓库的 `.github/workflows/pull-requests.yml` 只保留评论触发条件、权限、并发控制和可复用工作流调用。实际的 checkout、工作区准备、容器评测、artifact 保存和评论发布集中在 `MiniOJ-images/.github/workflows/judge.yml`，其中评测和发布评论仍使用两个独立 job。调用时只传入现有的两个 App secret。
 
-PR 评论工作流拉取 `MiniOJ-images` 仓库发布的 `ghcr.io/fffabulousrobotics/minioj-java21:1.0.0`。镜像提供 JDK 21、Gradle 9.1.0 和从 PyPI 安装的 MiniOJ 0.2.0，每次评测无需重新构建镜像或安装工具。题目配置仍来自独立的 `MiniOJ-config` 仓库。
+PR 评论工作流拉取 `MiniOJ-images` 仓库发布的 `ghcr.io/fffabulousrobotics/minioj-java21:1.0.1`。镜像提供 JDK 21、Gradle 9.1.0 和从 PyPI 安装的 MiniOJ 0.3.0，每次评测无需重新构建镜像或安装工具。题目配置仍来自独立的 `MiniOJ-config` 仓库。
 
 工作流先在 runner 上将默认分支项目与 PR 的 `Main.java` 组合到 `judge-work/`，再将它以可写方式挂载到容器的 `/workspace`。容器以 runner 的 UID/GID 运行，Gradle 的 build 产物和缓存可直接写入，不需要 sudo。Gradle 用户缓存使用临时目录；配置中的构建命令调用镜像自带的 `gradle --offline`，不重建 wrapper 缓存。
 
