@@ -1,7 +1,26 @@
-# W0 · 环境准备
+# Week 0 - 环境准备
 
-本周没有可提交到 OJ 的编程题，保留为独立 Gradle 模块。
+请根据 [Real Course 0][real-course-0] 进行环境配置。
 
-开始练习前安装 JDK 21 和 Git，fork 并 clone 本仓库。运行 `java -version` 和 `javac -version` 确认命令可用。使用已有的 IDE 打开根目录，按 Gradle 项目导入即可。
+## w0/ex1 - 环境测试
 
-准备好后运行 `./gradlew build`；Windows 的命令为 `gradlew.bat build`。首次使用 wrapper 会下载指定的 Gradle 版本。完整环境准备要求仍见原课程 W0 材料。
+### 要求
+
+编写一个 Java 程序，严格输出下列两行。允许任意合法 Java 实现，不要求使用固定变量名。
+
+### 样例
+
+**输入**
+
+无。
+
+**输出**
+
+```text
+Hello, FFFabulous 19726!
+Ready for FIRST Tech Challenge.
+```
+
+两行文字，区分大小写、空格及标点。
+
+[real-course-0]: https://github.com/FFFabulousRobotics/Real-Courses/blob/master/Course%200/Real%20Course%200.md

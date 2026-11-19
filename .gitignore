@@ -1,3 +1,10 @@
+.idea/
+bin/
+.project
+build/
+.settings/
+.classpath
+.gradle/
 .build/
 *.class
 __pycache__/
